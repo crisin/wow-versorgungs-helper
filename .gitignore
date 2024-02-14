@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Pocketbase
-/pocketserver
+/pocketserver/pb_data
