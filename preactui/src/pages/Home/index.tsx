@@ -1,8 +1,7 @@
 import { Card, Space, Typography } from "antd";
 import { useEffect, useState } from "preact/hooks";
 import { usePocket } from "../../contexts/PocketContext";
-import { Shipment } from "../../interfaces/Shipment";
-import "./style.css";
+import { Shipment } from "../../interfaces/Shipment.interface";
 
 const { Title } = Typography;
 
