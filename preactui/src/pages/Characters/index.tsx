@@ -1,24 +1,18 @@
 import { List, Typography } from "antd";
-import { useEffect, useState } from "preact/hooks";
+import { useEffect } from "preact/hooks";
 import { usePocket } from "../../contexts/PocketContext";
-import { Character } from "../../interfaces/Character.interface";
+import {
+  loadCharacters,
+  loadedCharacters,
+} from "../../services/CharacterService";
 
 const { Title } = Typography;
 
 export function Characters() {
-  const [characters, setCharacters] = useState<Character[]>([]);
   const { pb } = usePocket();
 
   useEffect(() => {
-    pb.collection("characters")
-      .getFullList()
-      .then((charactersRes) => {
-        console.log("chars:", charactersRes);
-        if (charactersRes.length > 0) {
-          const loadedCharacters = charactersRes as any;
-          setCharacters(loadedCharacters);
-        }
-      });
+    loadCharacters(pb);
   }, []);
 
   return (
@@ -27,7 +21,7 @@ export function Characters() {
 
       <section>
         <List
-          dataSource={characters}
+          dataSource={loadedCharacters.value}
           renderItem={(item) => (
             <List.Item>
               <List.Item.Meta title={item.name} description={item.user} />

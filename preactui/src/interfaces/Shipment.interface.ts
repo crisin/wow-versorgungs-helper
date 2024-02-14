@@ -1,10 +1,7 @@
-export interface Shipment {
-  collectionId: string;
-  collectionName: string;
-  created: Date;
-  id: string;
+import { RecordModel } from "pocketbase";
+
+export interface Shipment extends RecordModel {
   item: string;
   quantity: number;
-  updated: Date;
   wowheadlink: string;
 }

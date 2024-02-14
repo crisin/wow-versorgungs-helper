@@ -11,10 +11,9 @@ export function Home() {
 
   useEffect(() => {
     pb.collection("shipments")
-      .getFullList()
-      .then((shipmentRes) => {
-        if (shipmentRes.length > 0) {
-          const loadedShipments = shipmentRes as any;
+      .getFullList<Shipment>()
+      .then((loadedShipments) => {
+        if (loadedShipments.length > 0) {
           setShipments(loadedShipments);
         }
       });

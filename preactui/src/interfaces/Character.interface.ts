@@ -1,7 +1,6 @@
-import { BaseCollection } from "./BaseCollection.interface";
+import { RecordModel } from "pocketbase";
 
-export interface Character extends BaseCollection {
-    name: string;
-    user: string;
-  }
-  
+export interface Character extends RecordModel {
+  name: string;
+  user: string;
+}
