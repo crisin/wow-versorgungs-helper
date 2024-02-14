@@ -1,31 +1,19 @@
 import { Button, Form, Input } from "antd";
-import PocketBase from "pocketbase";
-
-const pb = new PocketBase("http://127.0.0.1:8090");
-
-const onFinish = (values: LoginData) => {
-  console.log("Success:", values);
-  loadData(values.username, values.password);
-};
-
-const onFinishFailed = (errorInfo: any) => {
-  console.log("Failed:", errorInfo);
-};
 
 type LoginData = {
   username?: string;
   password?: string;
 };
 
-const loadData = async (email, password) => {
-  if (password.length > 0 && password.length > 0) {
-    console.log("email:", email);
-    console.log("password", password);
-    pb.collection("users").authWithPassword(email, password);
-  }
-};
-
 export function Login() {
+  const onFinish = (values: LoginData) => {
+    console.log("Success:", values);
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log("Failed:", errorInfo);
+  };
+
   return (
     <Form
       name="login"

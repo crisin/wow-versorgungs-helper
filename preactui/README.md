@@ -1,0 +1,1 @@
+Auth Flow taken from https://github.com/FranciscoMendes10866/pocketbase-auth-example
