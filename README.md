@@ -4,8 +4,13 @@ cd .\pocketserver\
 .\pocketbase.exe serve 
 ````
 
-### Start Frontend
+### Install Frontend
 ````cmd
 cd .\preactui\
+npm i
+````
+
+### Start Frontend
+````cmd
 npm run dev
 ````
