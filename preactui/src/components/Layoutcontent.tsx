@@ -59,7 +59,7 @@ export function Layoutcontent() {
           }))}
           // style={{ flex: 1, minWidth: 0 }}
         />
-        <Text style={{ color: "white" }}>{user.name}</Text>
+        <Text style={{ color: "white" }}>{user?.name}</Text>
       </Header>
       <Content style={{ padding: "0 48px" }}>
         {/* todo: breadcrumbs implementieren / wahrscheinlich über hook / location provider */}
